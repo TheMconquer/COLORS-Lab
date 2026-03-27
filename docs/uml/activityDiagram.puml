@@ -1,0 +1,36 @@
+@startuml
+
+start
+
+:Open Website;
+
+if (Login or Register?) then (Register)
+    :Enter user info;
+    :Create account;
+else (Login)
+    :Enter username and password;
+    :Send login API request;
+endif
+
+if (Credentials Valid?) then (Yes)
+    :Open Colors Page;
+else (No)
+    :Display Error;
+    stop
+endif
+
+if (Choose Action) then (Add Color)
+    :Enter new color;
+    :Call AddColor API;
+    :Store color in database;
+else (Search Color)
+    :Enter search term;
+    :Call SearchColors API;
+    :Retrieve colors;
+endif
+
+:Display results;
+
+stop
+
+@enduml

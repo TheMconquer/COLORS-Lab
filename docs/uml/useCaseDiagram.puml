@@ -1,0 +1,22 @@
+@startuml
+
+left to right direction
+
+actor User
+
+rectangle "COLORS Web Application" {
+
+  User --> (Register)
+  User --> (Login)
+  User --> (Add Color)
+  User --> (Search Colors)
+  User --> (View Colors)
+  User --> (Logout)
+
+  (Login) --> (Verify Password) : <<include>>
+  (Add Color) --> (Store Color) : <<include>>
+  (Search Colors) --> (Query Database) : <<include>>
+
+}
+
+@enduml

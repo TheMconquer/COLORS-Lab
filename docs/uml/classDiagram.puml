@@ -1,0 +1,42 @@
+@startuml
+
+class User {
+  +userID : int
+  +username : string
+  +password : string
+  +login()
+  +register()
+}
+
+class Color {
+  +colorID : int
+  +userID : int
+  +colorName : string
+  +addColor()
+  +searchColor()
+}
+
+class APIHandler {
+  +requestType : string
+  +requestData : JSON
+  +login()
+  +addColor()
+  +searchColors()
+}
+
+class Database {
+  +host : string
+  +username : string
+  +password : string
+  +databaseName : string
+  +connect()
+  +executeQuery()
+  +close()
+}
+
+User "1" -- "*" Color : owns
+APIHandler --> User
+APIHandler --> Color
+APIHandler --> Database
+
+@enduml
