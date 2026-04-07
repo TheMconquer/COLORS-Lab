@@ -6,13 +6,14 @@ module.exports = [
         window: "readonly",
         XMLHttpRequest: "readonly",
         console: "readonly",
-        alert: "readonly"
+        alert: "readonly",
+        module: "writable"
       }
     },
     rules: {
       "no-unused-vars": "warn",
       "no-undef": "error",
-      "semi": ["error", "always"],
+      "semi": "off",
       "quotes": "off"
     }
   }
